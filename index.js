@@ -8,5 +8,8 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('/market_share', (req, res) => res.send("15%"))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+result = "15%"
+express().  .get('/market_share', (req, res) => res.send(result))
