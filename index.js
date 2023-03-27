@@ -15,19 +15,24 @@ async function webScraping(url, selector) {
     console.log("get data from " + url)
     let $ = cheerio.load(html.data);
     
-    const temp = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text().trim();
+    const temp = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text();
     console.log(temp);
-    result = temp;
-    res = temp;
+    result = temp.replace(/\s/g, "");
+    res = result;
     return res;
 }
 
 let url = 'https://ramses.kr/compare';
 let selector = 'h2 table tbody tr td';
 
+/*
 webScraping(url, selector).then((res) => {
   console.log(res)
 });
+*/
+
+webScraping(url, selector);
+setInterval(function(){webScraping(url, selector)}, 60000 * 15);
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
