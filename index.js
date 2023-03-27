@@ -17,7 +17,7 @@ async function webScraping(url, selector) {
     
     const temp = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text().trim();
     console.log(temp);
-    result = res;
+    result = temp;
     res = temp;
     return res;
 }
@@ -41,6 +41,4 @@ express()
                                                     }))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
-result = "15%" //initial value
 
