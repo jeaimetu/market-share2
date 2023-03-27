@@ -11,13 +11,11 @@ async function webScraping(url, selector) {
     let html = await axios.get(url);
     
     let $ = cheerio.load(html.data);
-    console.log($)
-    /*
-    for(let v of $(selector)) {   
-        //res.push($(v).text());
-    }*/
     
-    
+    $("table table-sm").each(function(tem){
+        var name = $(this).find("td").text.trim();
+        console.log(name);
+    })
     return res;
 }
 
