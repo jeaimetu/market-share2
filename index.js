@@ -20,7 +20,7 @@ async function webScraping(url, selector) {
 }
 
 let url = 'https://ramses.kr/compare';
-let selector = 'body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)';
+let selector = 'h2 table tbody tr td';
 
 webScraping(url, selector).then((res) => {
   console.log(res)
