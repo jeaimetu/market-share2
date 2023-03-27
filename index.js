@@ -12,9 +12,8 @@ async function webScraping(url, selector) {
     
     let $ = cheerio.load(html.data);
     
-    $("table table-sm").each(function(tem){
-        var name = $(this).find("td").text.trim();
-        console.log(name);
+    $("table table-sm").each(function(item){
+        console.log(item);
     })
     return res;
 }
