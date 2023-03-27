@@ -6,6 +6,8 @@ const path = require('path')
 
 const PORT = process.env.PORT || 5001
 
+global.result = "15%"
+
 async function webScraping(url, selector) {
     let res = [];
     let html = await axios.get(url);
