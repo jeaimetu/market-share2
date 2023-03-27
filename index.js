@@ -13,9 +13,10 @@ async function webScraping(url, selector) {
     console.log("get data from " + url)
     let $ = cheerio.load(html.data);
     
-    const res = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text().trim();
+    const temp = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text().trim();
     console.log(temp);
     result = res;
+    res = temp;
     return res;
 }
 
