@@ -10,10 +10,11 @@ async function webScraping(url, selector) {
     let res = [];
     let html = await axios.get(url);
     
+    console.log("get date from " + url)
     let $ = cheerio.load(html);
     
     $("table").each(function(item){
-        console.log(item);
+        console.log(item.text());
     })
     return res;
 }
