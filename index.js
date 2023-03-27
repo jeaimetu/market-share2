@@ -12,4 +12,4 @@ express()
 
 
 result = "15%"
-express().  .get('/market_share', (req, res) => res.send(result))
+express().get('/get_market_share', (req, res) => res.send(result))
