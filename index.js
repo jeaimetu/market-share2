@@ -11,7 +11,7 @@ async function webScraping(url, selector) {
     let html = await axios.get(url);
     
     console.log("get date from " + url)
-    let $ = cheerio.load(html);
+    let $ = cheerio.load(html.data);
     
     $("table").each(function(item){
         console.log(item.text());
