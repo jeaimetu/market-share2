@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5001
 async function webScraping(url, selector) {
     let res = [];
     let html = await axios.get(url);
+    console.log(html)
     let $ = cheerio.load(html.data);
   
     for(let v of $(selector)) {   
