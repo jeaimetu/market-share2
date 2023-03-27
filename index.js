@@ -10,9 +10,9 @@ async function webScraping(url, selector) {
     let res = [];
     let html = await axios.get(url);
     
-    let $ = cheerio.load(html.data);
+    let $ = cheerio.load(html);
     
-    $("table table-sm").each(function(item){
+    $("table").each(function(item){
         console.log(item);
     })
     return res;
