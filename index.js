@@ -13,9 +13,9 @@ async function webScraping(url, selector) {
     console.log("get data from " + url)
     let $ = cheerio.load(html.data);
     
-    const temp = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text();
+    const res = $('body > div > div > div > div > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(1)').text().trim();
     console.log(temp);
-    
+    result = res;
     return res;
 }
 
@@ -39,5 +39,5 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-result = "15%"
+result = "15%" //initial value
 
